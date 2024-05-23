@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/spark-05/Documents/swift/Weather/Weather.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
