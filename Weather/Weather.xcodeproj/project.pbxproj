@@ -14,6 +14,7 @@
 		B31CAAF52BFDC1B7005394F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B31CAAF42BFDC1B7005394F0 /* Assets.xcassets */; };
 		B31CAAF82BFDC1B7005394F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B31CAAF62BFDC1B7005394F0 /* LaunchScreen.storyboard */; };
 		B3C149402BFED34D009C741D /* YumemiWeather in Frameworks */ = {isa = PBXBuildFile; productRef = B3C1493F2BFED34D009C741D /* YumemiWeather */; };
+		B3C149422BFEFEC6009C741D /* LunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C149412BFEFEC6009C741D /* LunchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		B31CAAF42BFDC1B7005394F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B31CAAF72BFDC1B7005394F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B31CAAF92BFDC1B7005394F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3C149412BFEFEC6009C741D /* LunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				B31CAAED2BFDC1B6005394F0 /* SceneDelegate.swift */,
 				B31CAAEF2BFDC1B6005394F0 /* ViewController.swift */,
 				B31CAAF12BFDC1B6005394F0 /* Main.storyboard */,
+				B3C149412BFEFEC6009C741D /* LunchViewController.swift */,
 				B31CAAF62BFDC1B7005394F0 /* LaunchScreen.storyboard */,
 				B31CAAF42BFDC1B7005394F0 /* Assets.xcassets */,
 				B31CAAF92BFDC1B7005394F0 /* Info.plist */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B31CAAF02BFDC1B6005394F0 /* ViewController.swift in Sources */,
+				B3C149422BFEFEC6009C741D /* LunchViewController.swift in Sources */,
 				B31CAAEC2BFDC1B6005394F0 /* AppDelegate.swift in Sources */,
 				B31CAAEE2BFDC1B6005394F0 /* SceneDelegate.swift in Sources */,
 			);

@@ -41,4 +41,11 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func closebtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
+
