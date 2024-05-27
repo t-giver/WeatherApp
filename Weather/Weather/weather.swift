@@ -29,6 +29,9 @@ class SetWeather {
         }
         """
         
+        
+        
+        
         do {
             let fetchWeatherString = try YumemiWeather.fetchWeather(requestJson)
             print(fetchWeatherString)
