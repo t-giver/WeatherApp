@@ -27,38 +27,37 @@ class ViewController: UIViewController {
     @IBAction func closebtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    func showAlert() {
-        // アラートのインスタンスを作成
-        let alert = UIAlertController(title: "エラーだよ", message: "もう一度お試しください", preferredStyle: .alert)
-        
-        // アラートにOKボタンを追加
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        
-        // アラートを表示
-        self.present(alert, animated: true, completion: nil)
-    }
 }
+    
+    
 
     extension ViewController: weatherDateSet {
-    func wetherDate(type: String) {
-        if let image = UIImage(named: type)?.withRenderingMode(.alwaysTemplate) {
-            resultView.image = image
+        func wetherDate(type: String) {
+            if let image = UIImage(named: type)?.withRenderingMode(.alwaysTemplate) {
+                resultView.image = image
+            }
+            
+            switch type {
+            case "sunny":
+                resultView.tintColor = .red
+            case "cloudy":
+                resultView.tintColor = .gray
+            case "rainy":
+                resultView.tintColor = .blue
+            default:
+                break
+            }
         }
         
-        switch type {
-        case "sunny":
-            resultView.tintColor = .red
-        case "cloudy":
-            resultView.tintColor = .gray
-        case "rainy":
-            resultView.tintColor = .blue
-        default:
-            break
+        func wetherError(message:String) {
+            // アラートのインスタンスを作成
+            let alert = UIAlertController(title:message, message: "もう一度お試しください", preferredStyle: .alert)
+            
+            // アラートにOKボタンを追加
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            // アラートを表示
+            self.present(alert, animated: true, completion: nil)
         }
     }
-        
-        func wetherError() {
-            showAlert()
-            }
-}
+    

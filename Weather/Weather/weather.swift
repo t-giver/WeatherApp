@@ -13,7 +13,7 @@ import YumemiWeather
 
 protocol weatherDateSet {
     func wetherDate(type: String)
-    func wetherError()
+    func wetherError(message:String)
 }
 
 
@@ -25,7 +25,7 @@ class SetWeather {
             let fetchWeatherString = try YumemiWeather.fetchWeatherCondition(at: "")
             self.delegate?.wetherDate(type: fetchWeatherString)
         } catch {
-            self.delegate?.wetherError()
+            self.delegate?.wetherError(message:"エラーだよ")
         }
     }
     
