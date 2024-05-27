@@ -28,16 +28,7 @@ class ViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func showAlert() {
-        // アラートのインスタンスを作成
-        let alert = UIAlertController(title: "エラーだよ", message: "もう一度お試しください", preferredStyle: .alert)
-        
-        // アラートにOKボタンを追加
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        
-        // アラートを表示
-        self.present(alert, animated: true, completion: nil)
-    }
+ 
 }
 
     extension ViewController: weatherDateSet {
@@ -57,8 +48,9 @@ class ViewController: UIViewController {
             break
         }
     }
-        
-        func wetherError() {
-            showAlert()
-            }
+        func wetherError(message:String) {
+            let alert = UIAlertController(title: "エラーだよ", message: "もう一度お試しください", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
 }
