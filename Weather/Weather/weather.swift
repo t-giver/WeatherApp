@@ -9,8 +9,11 @@ import Foundation
 import YumemiWeather
 
 
+
+
 protocol weatherDateSet {
     func wetherDate(type: String)
+    func wetherError()
 }
 
 
@@ -18,12 +21,12 @@ class SetWeather {
     var delegate:weatherDateSet?
     
     func wetherDate() {
-        let fetchWeatherString = YumemiWeather.fetchWeatherCondition()
-        delegate?.wetherDate(type: fetchWeatherString)
+        do {
+            let fetchWeatherString = try YumemiWeather.fetchWeatherCondition(at: "")
+            self.delegate?.wetherDate(type: fetchWeatherString)
+        } catch {
+            self.delegate?.wetherError()
+        }
     }
- 
+    
 }
-
-//class WeatherPrint {
-//    var delegate:weatherDateSet?
-//}
