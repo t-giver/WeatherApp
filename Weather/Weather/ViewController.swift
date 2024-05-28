@@ -28,11 +28,15 @@ class ViewController: UIViewController {
     @IBAction func closebtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    @IBOutlet weak var minTemperature: UILabel!
+    
+    @IBOutlet weak var maxTemperature: UILabel!
 }
     
     
 
-    extension ViewController: weatherDateSet {
+extension ViewController: weatherDateSet {
+
         func wetherDate(type: String) {
             if let image = UIImage(named: type)?.withRenderingMode(.alwaysTemplate) {
                 resultView.image = image
@@ -51,14 +55,18 @@ class ViewController: UIViewController {
         }
         
         func wetherError(message:String) {
-            // アラートのインスタンスを作成
             let alert = UIAlertController(title:message, message: "もう一度お試しください", preferredStyle: .alert)
-            
-            // アラートにOKボタンを追加
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            
-            // アラートを表示
             self.present(alert, animated: true, completion: nil)
         }
+    
+        func minTemp(min: Int) {
+            minTemperature.text = String(min)
+        }
+    
+        func maxTemp(max: Int) {
+            maxTemperature.text = String(max)
+        }
+        
     }
     

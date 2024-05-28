@@ -102,6 +102,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="mib-pQ-JZM"/>
                     <connections>
+                        <outlet property="maxTemperature" destination="NkD-a9-hz1" id="XnD-KL-5oN"/>
+                        <outlet property="minTemperature" destination="TsL-6e-TII" id="ldD-Nt-qjw"/>
                         <outlet property="resultView" destination="nLG-yg-Xf6" id="aqf-Xo-AMz"/>
                     </connections>
                 </viewController>
