@@ -7,6 +7,9 @@
 
 import Foundation
 import YumemiWeather
+import Foundation
+
+
 
 
 
@@ -21,12 +24,23 @@ class SetWeather {
     var delegate:weatherDateSet?
     
     func wetherDate() {
+        let requestJson = """
+    {
+    "area": "Tokyo",
+    "date": "2020-04-01T12:00:00+09:00"
+    }
+    """.data(using: .utf8)!
+
+
         do {
-            let fetchWeatherString = try YumemiWeather.fetchWeatherCondition(at: "")
+            let fetchWeatherString = try YumemiWeather.fetchWeather(requestJson)
+            print(fetchWeatherString)
             self.delegate?.wetherDate(type: fetchWeatherString)
         } catch {
             self.delegate?.wetherError(message:"エラーだよ")
         }
+       
+
     }
     
 }
