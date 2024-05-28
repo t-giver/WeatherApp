@@ -32,41 +32,33 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var maxTemperature: UILabel!
 }
-    
-    
+
+
 
 extension ViewController: weatherDateSet {
-
-        func wetherDate(type: String) {
-            if let image = UIImage(named: type)?.withRenderingMode(.alwaysTemplate) {
-                resultView.image = image
-            }
-            
-            switch type {
-            case "sunny":
-                resultView.tintColor = .red
-            case "cloudy":
-                resultView.tintColor = .gray
-            case "rainy":
-                resultView.tintColor = .blue
-            default:
-                break
-            }
-        }
-        
-        func wetherError(message:String) {
-            let alert = UIAlertController(title:message, message: "もう一度お試しください", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
     
-        func minTemp(min: Int) {
-            minTemperature.text = String(min)
+    func weatherDateCollection(maxTemp: Int, minTemp: Int, weatherCondition: String) {
+        if let image = UIImage(named: weatherCondition)?.withRenderingMode(.alwaysTemplate) {
+            resultView.image = image
         }
-    
-        func maxTemp(max: Int) {
-            maxTemperature.text = String(max)
+        switch weatherCondition {
+        case "sunny":
+            resultView.tintColor = .red
+        case "cloudy":
+            resultView.tintColor = .gray
+        case "rainy":
+            resultView.tintColor = .blue
+        default:
+            break
         }
-        
     }
     
+    func wetherError(message:String) {
+        let alert = UIAlertController(title:message, message: "もう一度お試しください", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+
+}
+
