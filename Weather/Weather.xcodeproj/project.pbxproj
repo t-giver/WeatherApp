@@ -48,7 +48,6 @@
 		B31CAADF2BFDC1B6005394F0 = {
 			isa = PBXGroup;
 			children = (
-				B3594A302C06BF3C0026A5A8 /* wetherStruct.swift */,
 				B31CAAEA2BFDC1B6005394F0 /* Weather */,
 				B31CAAE92BFDC1B6005394F0 /* Products */,
 			);
@@ -69,6 +68,7 @@
 				B31CAAED2BFDC1B6005394F0 /* SceneDelegate.swift */,
 				B31CAAEF2BFDC1B6005394F0 /* ViewController.swift */,
 				B317449D2C00285500B72D28 /* weather.swift */,
+				B3594A302C06BF3C0026A5A8 /* wetherStruct.swift */,
 				B3C149412BFEFEC6009C741D /* LunchViewController.swift */,
 				B31CAAF12BFDC1B6005394F0 /* Main.storyboard */,
 				B31CAAF62BFDC1B7005394F0 /* LaunchScreen.storyboard */,

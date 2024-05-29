@@ -87,21 +87,27 @@
                                     <action selector="btnReload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RmF-zc-h6y"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="cJS-ha-FQf">
+                                <rect key="frame" x="186.66666666666666" y="571" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="YrP-rM-8nz" firstAttribute="top" secondItem="81A-30-Sgc" secondAttribute="bottom" constant="80" id="20o-B8-Ksp"/>
+                            <constraint firstItem="cJS-ha-FQf" firstAttribute="top" secondItem="81A-30-Sgc" secondAttribute="bottom" constant="36.329999999999998" id="Na3-sn-anp"/>
                             <constraint firstItem="YrP-rM-8nz" firstAttribute="centerX" secondItem="TsL-6e-TII" secondAttribute="centerX" id="PWg-9s-EL9"/>
                             <constraint firstItem="81A-30-Sgc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZGh-Je-chI"/>
                             <constraint firstItem="81A-30-Sgc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hwt-8j-g9D"/>
                             <constraint firstItem="81A-30-Sgc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="iGh-rc-ynf"/>
+                            <constraint firstItem="cJS-ha-FQf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iHY-Rp-6cD"/>
                             <constraint firstItem="9oT-Dr-WuM" firstAttribute="top" secondItem="81A-30-Sgc" secondAttribute="bottom" constant="80" id="pCa-ZU-LgP"/>
                             <constraint firstItem="9oT-Dr-WuM" firstAttribute="centerX" secondItem="NkD-a9-hz1" secondAttribute="centerX" id="pST-nc-hmc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mib-pQ-JZM"/>
                     <connections>
+                        <outlet property="indicator" destination="cJS-ha-FQf" id="80W-PT-oot"/>
                         <outlet property="maxTemperature" destination="NkD-a9-hz1" id="XnD-KL-5oN"/>
                         <outlet property="minTemperature" destination="TsL-6e-TII" id="ldD-Nt-qjw"/>
                         <outlet property="resultView" destination="nLG-yg-Xf6" id="aqf-Xo-AMz"/>
