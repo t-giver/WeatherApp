@@ -37,11 +37,11 @@ class ViewController: UIViewController {
 
 extension ViewController: weatherDateSet {
     
-    func weatherDateCollection(maxTemp: Int, minTemp: Int, weatherCondition: String) {
-        if let image = UIImage(named: weatherCondition)?.withRenderingMode(.alwaysTemplate) {
+    func weatherDateCollection(weather: Weather) {
+        if let image = UIImage(named: weather.weatherCondition)?.withRenderingMode(.alwaysTemplate) {
             resultView.image = image
         }
-        switch weatherCondition {
+        switch weather.weatherCondition {
         case "sunny":
             resultView.tintColor = .red
         case "cloudy":
@@ -51,6 +51,8 @@ extension ViewController: weatherDateSet {
         default:
             break
         }
+        minTemperature.text = String(weather.minTemp)
+        maxTemperature.text = String(weather.maxTemp)
     }
     
     func wetherError(message:String) {

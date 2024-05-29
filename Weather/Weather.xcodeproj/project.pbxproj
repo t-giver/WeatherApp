@@ -14,6 +14,7 @@
 		B31CAAF32BFDC1B6005394F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B31CAAF12BFDC1B6005394F0 /* Main.storyboard */; };
 		B31CAAF52BFDC1B7005394F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B31CAAF42BFDC1B7005394F0 /* Assets.xcassets */; };
 		B31CAAF82BFDC1B7005394F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B31CAAF62BFDC1B7005394F0 /* LaunchScreen.storyboard */; };
+		B3594A312C06BF3C0026A5A8 /* wetherStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3594A302C06BF3C0026A5A8 /* wetherStruct.swift */; };
 		B3C149402BFED34D009C741D /* YumemiWeather in Frameworks */ = {isa = PBXBuildFile; productRef = B3C1493F2BFED34D009C741D /* YumemiWeather */; };
 		B3C149422BFEFEC6009C741D /* LunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C149412BFEFEC6009C741D /* LunchViewController.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 		B31CAAF42BFDC1B7005394F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B31CAAF72BFDC1B7005394F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B31CAAF92BFDC1B7005394F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3594A302C06BF3C0026A5A8 /* wetherStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wetherStruct.swift; sourceTree = "<group>"; };
 		B3C149412BFEFEC6009C741D /* LunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,6 +48,7 @@
 		B31CAADF2BFDC1B6005394F0 = {
 			isa = PBXGroup;
 			children = (
+				B3594A302C06BF3C0026A5A8 /* wetherStruct.swift */,
 				B31CAAEA2BFDC1B6005394F0 /* Weather */,
 				B31CAAE92BFDC1B6005394F0 /* Products */,
 			);
@@ -157,6 +160,7 @@
 				B3C149422BFEFEC6009C741D /* LunchViewController.swift in Sources */,
 				B31CAAEC2BFDC1B6005394F0 /* AppDelegate.swift in Sources */,
 				B31CAAEE2BFDC1B6005394F0 /* SceneDelegate.swift in Sources */,
+				B3594A312C06BF3C0026A5A8 /* wetherStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

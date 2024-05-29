@@ -7,37 +7,17 @@
 import Foundation
 import YumemiWeather
 
-struct Date: Codable {
-    let area: String
-    let date: String
-}
 
-struct weatherDateCollection: Codable{
-    let maxTemp: Int
-    let minTemp: Int
-    let weatherCondition: String
-    
-    enum CodingKeys: String, CodingKey {
-        case maxTemp = "max_temperature"
-        case minTemp = "min_temperature"
-        case weatherCondition = "weather_condition"
-    }
-    
-}
 
-//struct TEST: Codable{
-//    let max_temperature: Int
-//
-//}
+
 
 protocol weatherDateSet {
     func wetherError(message: String)
-    func weatherDateCollection(maxTemp: Int, minTemp: Int, weatherCondition: String)
+    func weatherDateCollection(weather: Weather)
 }
 
 class SetWeather {
     var delegate: weatherDateSet?
-    
     func wetherDate() {
         let sendJsonString = Date(area: "Tokyo", date: "2020-04-01T12:00:00+09:00")
         
@@ -56,20 +36,10 @@ class SetWeather {
             }
             
             let decoder = JSONDecoder()             //デコード
-            let weatherCollection = try decoder.decode(weatherDateCollection.self, from: jsonString)
-            
-            let max = weatherCollection.maxTemp
-            let min = weatherCollection.minTemp
-            
-            guard let json = try JSONSerialization.jsonObject(with: Data(fetchWeatherString.utf8), options: []) as? [String: Any]
-            else {
-                return
-            }
-            
-            self.delegate?.weatherDateCollection(maxTemp: max, minTemp: min, weatherCondition: "weather_condition")
-            
-            
-        } catch {
+            let weatherStruct = try decoder.decode(Weather.self, from: jsonString)
+            self.delegate?.weatherDateCollection(weather: weatherStruct)
+        }
+        catch {
             self.delegate?.wetherError(message: "エラーだよ")
         }
     }
