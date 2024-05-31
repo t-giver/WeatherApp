@@ -21,10 +21,10 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let weather):
-                    self?.handleWeatherData(weather: weather)
+                    self.handleWeatherData(weather: weather)
                 case .failure(let error):
-                    self?.handleWeatherError(message: error.localizedDescription)
-                    self?.indicator.stopAnimating()
+                    self.handleWeatherError(message: error.localizedDescription)
+                    self.indicator.stopAnimating()
                 }
             }
         }
