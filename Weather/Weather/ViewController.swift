@@ -16,15 +16,17 @@ class ViewController: UIViewController {
     
     @IBAction func btnReload(_ sender: Any) {
         self.indicator.startAnimating()
-        
+        execution()
+    }
+    func execution(){
         setWeather.fetchWeather { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let weather):
-                    self.handleWeatherData(weather: weather)
+                    self?.handleWeatherData(weather: weather)
                 case .failure(let error):
-                    self.handleWeatherError(message: error.localizedDescription)
-                    self.indicator.stopAnimating()
+                    self?.handleWeatherError(message: error.localizedDescription)
+                    self?.indicator.stopAnimating()
                 }
             }
         }
@@ -35,6 +37,7 @@ class ViewController: UIViewController {
     }
     
     private func handleWeatherData(weather: Weather) {
+        
         if let image = UIImage(named: weather.weatherCondition)?.withRenderingMode(.alwaysTemplate) {
             self.resultView.image = image
         }
@@ -52,6 +55,7 @@ class ViewController: UIViewController {
         self.maxTemperature.text = String(weather.maxTemp)
         self.indicator.stopAnimating()
         self.indicator.isHidden = true
+        
     }
     
     private func handleWeatherError(message: String) {
