@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import YumemiWeather
+
+//Vc用
 
 struct Date: Codable {
     let area: String
@@ -23,6 +26,18 @@ struct Weather: Codable{
         case weatherCondition = "weather_condition"
     }
     
+}
+
+
+//List用
+struct WetherJson: Codable {
+    let areas: [String]
+    let date: String
+}
+
+struct List: Codable {
+    let area: Area
+    let info: Weather
 }
 
 
