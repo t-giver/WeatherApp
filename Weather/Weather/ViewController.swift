@@ -3,6 +3,8 @@ import UIKit
 class ViewController: UIViewController {
     
     let setWeather = SetWeather()
+    var segueMinTemperature: String = ""
+    var segueMaxTemperature: String = ""
     
     @IBOutlet weak var resultView: UIImageView!
     @IBOutlet weak var minTemperature: UILabel!
@@ -12,6 +14,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.indicator.hidesWhenStopped = true
+        minTemperature.text = segueMinTemperature
+        maxTemperature.text = segueMaxTemperature
     }
     
     @IBAction func btnReload(_ sender: Any) {
@@ -36,7 +40,7 @@ class ViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    private func handleWeatherData(weather: Weather) {
+     func handleWeatherData(weather: Weather) {
         
         if let image = UIImage(named: weather.weatherCondition)?.withRenderingMode(.alwaysTemplate) {
             self.resultView.image = image
@@ -58,7 +62,7 @@ class ViewController: UIViewController {
         
     }
     
-    private func handleWeatherError(message: String) {
+     func handleWeatherError(message: String) {
         let alert = UIAlertController(title:"エラーだよ", message: "もう一度お試しください", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
