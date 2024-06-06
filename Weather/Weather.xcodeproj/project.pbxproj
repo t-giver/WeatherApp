@@ -14,12 +14,13 @@
 		B31CAAF32BFDC1B6005394F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B31CAAF12BFDC1B6005394F0 /* Main.storyboard */; };
 		B31CAAF52BFDC1B7005394F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B31CAAF42BFDC1B7005394F0 /* Assets.xcassets */; };
 		B31CAAF82BFDC1B7005394F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B31CAAF62BFDC1B7005394F0 /* LaunchScreen.storyboard */; };
+		B3440C4B2C11868B00E18BB8 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3440C4A2C11868B00E18BB8 /* CollectionViewController.swift */; };
+		B3440C4D2C118CFD00E18BB8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3440C4C2C118CFD00E18BB8 /* CollectionViewCell.swift */; };
 		B3594A312C06BF3C0026A5A8 /* wetherStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3594A302C06BF3C0026A5A8 /* wetherStruct.swift */; };
 		B3C149402BFED34D009C741D /* YumemiWeather in Frameworks */ = {isa = PBXBuildFile; productRef = B3C1493F2BFED34D009C741D /* YumemiWeather */; };
 		B3C149422BFEFEC6009C741D /* LunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C149412BFEFEC6009C741D /* LunchViewController.swift */; };
 		B3CEAF522C0D53EB009D32F0 /* TableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CEAF512C0D53EB009D32F0 /* TableListViewController.swift */; };
 		B3CEAF542C0D75F4009D32F0 /* wetherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CEAF532C0D75F4009D32F0 /* wetherList.swift */; };
-		B3CEAF562C0D764A009D32F0 /* ListStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CEAF552C0D764A009D32F0 /* ListStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,11 +33,12 @@
 		B31CAAF42BFDC1B7005394F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B31CAAF72BFDC1B7005394F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B31CAAF92BFDC1B7005394F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3440C4A2C11868B00E18BB8 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionViewController.swift; path = ../CollectionViewController.swift; sourceTree = "<group>"; };
+		B3440C4C2C118CFD00E18BB8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		B3594A302C06BF3C0026A5A8 /* wetherStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wetherStruct.swift; sourceTree = "<group>"; };
 		B3C149412BFEFEC6009C741D /* LunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchViewController.swift; sourceTree = "<group>"; };
 		B3CEAF512C0D53EB009D32F0 /* TableListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableListViewController.swift; sourceTree = "<group>"; };
 		B3CEAF532C0D75F4009D32F0 /* wetherList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wetherList.swift; sourceTree = "<group>"; };
-		B3CEAF552C0D764A009D32F0 /* ListStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,8 @@
 				B31CAAEF2BFDC1B6005394F0 /* ViewController.swift */,
 				B3CEAF512C0D53EB009D32F0 /* TableListViewController.swift */,
 				B3C149412BFEFEC6009C741D /* LunchViewController.swift */,
+				B3440C4A2C11868B00E18BB8 /* CollectionViewController.swift */,
+				B3440C4C2C118CFD00E18BB8 /* CollectionViewCell.swift */,
 				B317449D2C00285500B72D28 /* weather.swift */,
 				B3CEAF532C0D75F4009D32F0 /* wetherList.swift */,
 				B3594A302C06BF3C0026A5A8 /* wetherStruct.swift */,
@@ -82,7 +86,6 @@
 				B31CAAF62BFDC1B7005394F0 /* LaunchScreen.storyboard */,
 				B31CAAF42BFDC1B7005394F0 /* Assets.xcassets */,
 				B31CAAF92BFDC1B7005394F0 /* Info.plist */,
-				B3CEAF552C0D764A009D32F0 /* ListStruct.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -164,13 +167,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3440C4D2C118CFD00E18BB8 /* CollectionViewCell.swift in Sources */,
+				B3440C4B2C11868B00E18BB8 /* CollectionViewController.swift in Sources */,
 				B317449E2C00285500B72D28 /* weather.swift in Sources */,
 				B31CAAF02BFDC1B6005394F0 /* ViewController.swift in Sources */,
 				B3C149422BFEFEC6009C741D /* LunchViewController.swift in Sources */,
 				B31CAAEC2BFDC1B6005394F0 /* AppDelegate.swift in Sources */,
 				B31CAAEE2BFDC1B6005394F0 /* SceneDelegate.swift in Sources */,
 				B3594A312C06BF3C0026A5A8 /* wetherStruct.swift in Sources */,
-				B3CEAF562C0D764A009D32F0 /* ListStruct.swift in Sources */,
 				B3CEAF542C0D75F4009D32F0 /* wetherList.swift in Sources */,
 				B3CEAF522C0D53EB009D32F0 /* TableListViewController.swift in Sources */,
 			);

@@ -82,14 +82,6 @@ class TableListViewController: UIViewController,UITableViewDataSource,UITableVie
         self.viewDidLoad()
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "CellSegue",
-           let indexPath = tableView.indexPathForSelectedRow,
-           let vc = segue.destination as? ViewController {
-            vc.text = weatherList[indexPath.row]
-        }
-    }
     func configureRefreshControl () {
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
@@ -101,6 +93,14 @@ class TableListViewController: UIViewController,UITableViewDataSource,UITableVie
         DispatchQueue.main.async {
             self.tableView.reloadData()  //TableViewの中身を更新する場合はここでリロード処理
             self.tableView.refreshControl?.endRefreshing()  //これを必ず記載すること
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CellSegue",
+           let indexPath = tableView.indexPathForSelectedRow,
+           let vc = segue.destination as? ViewController {
+            vc.text = weatherList[indexPath.row]
         }
     }
     

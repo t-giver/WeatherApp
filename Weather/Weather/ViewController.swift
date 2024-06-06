@@ -3,9 +3,6 @@ import UIKit
 class ViewController: UIViewController {
     
     let setWeather = SetWeather()
-//    var segueMinTemperature: String?
-//    var segueMaxTemperature: String?
-//    var segueArea: String?
     var text:List?
  
     
