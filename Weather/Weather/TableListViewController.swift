@@ -69,13 +69,14 @@ class TableListViewController: UIViewController,UITableViewDataSource,UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-    }  
+    }
     
     
     
     func handleWeatherError(message: String) {
         let alert = UIAlertController(title:"通信エラー", message: "もう一度お試しください", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(_) in self.viewDidLoad()}))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+            self?.fetchWeatherData()}))
         self.present(alert, animated: true, completion: nil)
         //        tableView.reloadData()
         self.viewDidLoad()
@@ -90,7 +91,6 @@ class TableListViewController: UIViewController,UITableViewDataSource,UITableVie
         }
     }
     func configureRefreshControl () {
-        //RefreshControlを追加する処理
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
     }

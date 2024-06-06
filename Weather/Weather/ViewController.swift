@@ -7,6 +7,7 @@ class ViewController: UIViewController {
 //    var segueMaxTemperature: String?
 //    var segueArea: String?
     var text:List?
+ 
     
     @IBOutlet weak var resultView: UIImageView!
     @IBOutlet weak var minTemperature: UILabel!
@@ -17,7 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.indicator.hidesWhenStopped = true
         segueData()
-        
+        self.title = text?.area.rawValue
     }
     
     func segueData(){
@@ -64,7 +65,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func closebtn(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
        
     }
     
