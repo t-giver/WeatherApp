@@ -12,7 +12,8 @@ class SendList {
     let allAreas = Area.allCases.map { $0.rawValue }
     func dataList(completion: @escaping (Result<[List],Error>) -> Void) {
         DispatchQueue.global().async{
-            let sendJsonDataString = WetherJson(areas: self.allAreas, date: "2020-04-01T12:00:00+09:00")
+            let date = Date().ISO8601Format()
+            let sendJsonDataString = WetherJson(areas: self.allAreas, date: date)
             do{
                 let encoder = JSONEncoder()
                 let jsonData = try encoder.encode(sendJsonDataString)

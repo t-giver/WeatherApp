@@ -3,8 +3,10 @@ import UIKit
 class ViewController: UIViewController {
     
     let setWeather = SetWeather()
-    var segueMinTemperature: String = ""
-    var segueMaxTemperature: String = ""
+//    var segueMinTemperature: String?
+//    var segueMaxTemperature: String?
+//    var segueArea: String?
+    var text:List?
     
     @IBOutlet weak var resultView: UIImageView!
     @IBOutlet weak var minTemperature: UILabel!
@@ -14,8 +16,33 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.indicator.hidesWhenStopped = true
-        minTemperature.text = segueMinTemperature
-        maxTemperature.text = segueMaxTemperature
+        segueData()
+        
+    }
+    
+    func segueData(){
+        guard let segueInfo = text else {
+            return
+        }
+        if let image = UIImage(named:segueInfo.info.weatherCondition)?.withRenderingMode(.alwaysTemplate) {
+            self.resultView.image = image
+        }
+        switch segueInfo.info.weatherCondition {
+        case "sunny":
+            self.resultView.tintColor = .red
+        case "cloudy":
+            self.resultView.tintColor = .gray
+        case "rainy":
+            self.resultView.tintColor = .blue
+        default:
+            break
+        }
+        self.minTemperature.text = String(segueInfo.info.minTemp)
+        self.maxTemperature.text = String(segueInfo.info.maxTemp)
+        self.indicator.stopAnimating()
+        self.indicator.isHidden = true
+        
+        
     }
     
     @IBAction func btnReload(_ sender: Any) {
@@ -38,9 +65,10 @@ class ViewController: UIViewController {
     
     @IBAction func closebtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+       
     }
     
-     func handleWeatherData(weather: Weather) {
+    func handleWeatherData(weather: Weather) {
         
         if let image = UIImage(named: weather.weatherCondition)?.withRenderingMode(.alwaysTemplate) {
             self.resultView.image = image
@@ -62,7 +90,7 @@ class ViewController: UIViewController {
         
     }
     
-     func handleWeatherError(message: String) {
+    func handleWeatherError(message: String) {
         let alert = UIAlertController(title:"エラーだよ", message: "もう一度お試しください", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)

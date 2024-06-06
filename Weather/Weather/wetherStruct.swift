@@ -10,7 +10,7 @@ import YumemiWeather
 
 //Vc用
 
-struct Date: Codable {
+struct WeatherData: Codable {
     let area: String
     let date: String
 }
