@@ -89,7 +89,7 @@ class ViewController: UIViewController {
     }
     
     func handleWeatherError(message: String) {
-        let alert = UIAlertController(title:"エラーだよ", message: "もう一度お試しください", preferredStyle: .alert)
+        let alert = UIAlertController(title:"エラーです。", message: "もう一度お試しください", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         self.indicator.stopAnimating()
