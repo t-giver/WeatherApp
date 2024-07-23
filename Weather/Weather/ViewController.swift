@@ -3,11 +3,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let setWeather = SetWeather()
-//    var segueMinTemperature: String?
-//    var segueMaxTemperature: String?
-//    var segueArea: String?
     var text:List?
- 
     
     @IBOutlet weak var resultView: UIImageView!
     @IBOutlet weak var minTemperature: UILabel!
@@ -66,7 +62,7 @@ class ViewController: UIViewController {
     
     @IBAction func closebtn(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
-       
+        
     }
     
     func handleWeatherData(weather: Weather) {

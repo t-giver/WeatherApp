@@ -20,9 +20,8 @@ class SendList {
                 guard let jsonString = String(data:jsonData,encoding: .utf8) else {
                     return
                 }
-                
+            
                 let wetherList = try YumemiWeather.syncFetchWeatherList(jsonString)
-                
                 guard let jsonString = wetherList.data(using: .utf8)
                 else {
                     return
